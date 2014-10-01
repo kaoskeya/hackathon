@@ -1,0 +1,35 @@
+
+<template name="Feed">
+  <h3>Your Feed</h3>
+  {{#unless feed}}
+    <h4>No Activities Near By. Plan one.</h4>
+  {{/unless}}
+
+  {{#each feed}}
+    <div class="list-group">
+      <div class="list-group-item">
+        <div class="row-content">
+          <h4 class="list-group-item-heading">{{title}}</h4>
+          <h6>{{format_time start_time}}</h6>
+          <p class="list-group-item-text">{{content}}</p>
+
+          {{#if is_rsvpd}}
+            {{#unless is_owner}}
+              <button id="rsvp" class="btn btn-danger btn-xs">Un-RSVP</button>
+            {{/unless}}
+          {{else}}
+            <button id="rsvp" class="btn btn-success btn-xs">RSVP</button>          
+          {{/if}}
+          <button id="attendees_toggle" class="btn btn-success btn-xs">Attendees ({{attendee_count}})</button>
+        </div>
+      </div>
+
+      <div id="attendees_container_{{_id}}" class="hide">
+        {{attendees}}
+      </div>
+
+      <div class="list-group-separator"></div>
+    </div>
+  {{/each}}
+</template>
+

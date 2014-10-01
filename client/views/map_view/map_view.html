@@ -1,0 +1,38 @@
+
+<template name="MapView">
+  <div id="map_view">
+  </div>
+  <div id="map_control" class="hide">
+    <ul class="nav nav-pills nav-justified">
+      {{#if currentUser}}
+      
+      <li class="control btn btn-info btn-flat" data-content-view="Feed">
+        <i class="glyphicon glyphicon-home"></i>
+      </li>
+
+      <li class="control btn btn-info btn-flat" data-content-view="CreateActivity">
+        <i class="glyphicon glyphicon-map-marker"></i>
+      </li>
+
+<!--       <li class="control btn btn-info btn-flat" data-content-view="CreateOrganization">
+        <i class="icon icon-material-group-add"></i>
+      </li>
+ -->
+      <li class="control btn btn-info btn-flat" data-content-view="ListUsers">
+        <i class="icon icon-material-people"></i>
+      </li>
+
+      <li class="control btn btn-info btn-flat" data-content-view="UserProfile">
+        <i class="icon icon-material-person"></i>
+      </li>
+      {{/if}}
+
+    </ul>
+    <div id="content_pane">
+      {{> UI.dynamic template=content_view data=data_helper}}
+    </div>
+  </div>
+
+  <span data-toggle=snackbar data-content="This is my awesome snackbar!">Click me</span>
+
+</template>

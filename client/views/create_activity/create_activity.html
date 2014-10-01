@@ -1,0 +1,94 @@
+
+<template name="CreateActivity">
+
+  <form id="create_activity" class="form-horizontal">
+    <fieldset>
+
+
+      <legend>Add an activity</legend>      
+
+
+      <div class="form-group">
+        <label for="title" class="col-md-3 control-label">Title</label>
+        <div class="col-md-9">
+          <input type="text" class="form-control" name="title"
+            placeholder="Name of your activity" required>
+        </div>
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="location" class="col-md-3 control-label">Location</label>
+        <div class="col-md-9">
+          <input type="text" class="form-control" id="location"
+          name="location" placeholder="Location">
+        </div>
+      </div>
+      
+
+      <div class="form-group">
+        <label for="start_time" class="col-md-3 control-label">Start Time</label>
+        <div class="col-md-9">
+          <input type="datetime" class="form-control datetimepicker" id="start_time"
+            name="start_time" required data-date-format="dddd, MMMM Do YYYY, h:mm:ss A">
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="end_time" class="col-md-3 control-label">End Time</label>
+        <div class="col-md-9">
+          <input type="datetime" class="form-control datetimepicker" id="end_time"
+            name="end_time" required data-date-format="dddd, MMMM Do YYYY, h:mm:ss A">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="details" class="col-md-3 control-label">Details</label>
+        <div class="col-md-9">
+          <textarea class="form-control" rows="3" id="details"
+            name="details"></textarea>
+<!--           <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span> -->
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="image" class="col-md-3 control-label">Image</label>
+        <div class="col-md-9">
+          <input type="text" readonly="" class="form-control floating-label" placeholder="Click to select images...">
+          <input type="file" id="image" name="image" multiple="">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+          {{#each images}}
+            <img class="image" src={{this.url}}>
+          {{/each}}
+        </div>
+      </div>
+
+
+<!--       <div class="form-group">
+        <label for="organization" class="col-md-3 control-label">Selects</label>
+        <div class="col-md-9">
+          <select class="form-control" id="organization" name="organization">
+            {{#each my_organizations}}
+              <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div> -->
+
+      <div class="form-group">
+        <div class="col-md-9 col-md-offset-2">
+          <button class="btn btn-default">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+</template>
+
