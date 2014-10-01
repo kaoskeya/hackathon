@@ -32,4 +32,4 @@ Roadmap
 Demo
 ============================
 
-[View our app](128.199.207.159:3000) and Star/Fork.
+[View our app](http://128.199.207.159:3000) and Star/Fork.
